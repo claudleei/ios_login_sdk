@@ -13,13 +13,13 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'JKAuthDemoFrameworkPod'
+pod '{PodName}'
 ```
 
 ### [Swift Package Manager](https://swift.org/package-manager/)
 
 - File > Swift Packages > Add Package Dependency
-- Add {repository url}
+- Add {Repository URL}
 
 ## Configure Your Project
 
@@ -91,7 +91,7 @@ import UIKit
 import JKOAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-...
+// ...
 
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         guard let urlContext = URLContexts.first else { return }
@@ -133,17 +133,20 @@ class ViewController: UIViewController {
 
     @objc private func tapJKOAuthButton(_ sender: JKOAuthButton) {
         jkoAuth.delegate = self
-        jkoAuth.start(scopes: [.userInfo])
+        jkoAuth.start(scopes: [{Scopes}], userID: {Your User's ID})
     }
 }
 ```
 
 ## Delegate with JKOAuthDelegate
 ```swift
-protocol JKOAuthDelegate: AnyObject {
+public protocol JKOAuthDelegate: AnyObject {
     /// Finish authorization successfully with auth code.
     /// - Parameter authCode: -
-    func authDidSuccess(authCode: String)
+    /// - Parameter grantedScopes: Scopes that user has granted.
+    /// - Parameter jkosUserID: **Optional** value. User ID of JKO service. Look up the document for more details.
+    /// - Parameter userID: **Optional** value. User ID of your service. Look up the document for more details.
+    func authDidSuccess(authCode: String, grantedScopes: [String], jkosUserID: String?, userID: String?)
     
     /// Finish authorization with error.
     /// - Parameter error: -
@@ -153,7 +156,13 @@ protocol JKOAuthDelegate: AnyObject {
     func jkosAppNotFound()
 }
 ```
-
+  
+## 參數
+### scopes
+| Name | Description |
+| --- | --- |
+| binding | 用戶同意是否允許第三方平台用戶與街口用戶的建立關聯，獲得授權綁定關係後，後續部分業務行為會進行綁定關係的驗證。若欲申請此項 SCOPE 需於 input params 中輸入參數您的用戶userID 。 |
+| pointtransmit | 用戶同意從第三方帳戶補儲值至個別用戶的街口帳戶，於補儲值的過程中，會驗證用戶綁定狀態、資金方帳戶、收款方狀態等業務邏輯。 |
 ## 錯誤處理
 說明關於 iOS JKOAuth SDK 中出現的相關錯誤，如：
 ```swift
@@ -189,8 +198,14 @@ public enum CipherErrorReason {
 
 ## Author
 
-sagiters19@gmail.com, sagiters19@gmail.com
+ken.lee@jkos.com
+  
+jack.kuo@jkos.com
+  
+agnes.lo@jkos.com
+  
+chiahan.kuo@jkos.com
 
 ## License
 
-JKAuthDemoFrameworkPod is available under the MIT license. See the LICENSE file for more info.
+ios_login_sdk is available under the MIT license. See the LICENSE file for more info.

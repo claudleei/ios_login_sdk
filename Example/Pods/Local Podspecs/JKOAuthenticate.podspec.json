@@ -1,0 +1,22 @@
+{
+  "name": "JKOAuthenticate",
+  "version": "0.1.0",
+  "summary": "A short description of JKOAuthenticate.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Ken Lee/JKOAuthenticate",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Ken Lee": "ken.lee@jkos.com"
+  },
+  "source": {
+    "git": "https://github.com/Ken Lee/JKOAuthenticate.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "JKOAuthenticate/Classes/**/*"
+}

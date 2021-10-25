@@ -1,0 +1,16 @@
+PODS:
+  - JKOAuthenticate (0.1.0)
+
+DEPENDENCIES:
+  - JKOAuthenticate (from `../`)
+
+EXTERNAL SOURCES:
+  JKOAuthenticate:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  JKOAuthenticate: 28e7e0387d07ae5fddd79870573c7ad2e727c479
+
+PODFILE CHECKSUM: 1c0819aa70afe3384fa9790f6ba3d4f3621aafc8
+
+COCOAPODS: 1.10.1

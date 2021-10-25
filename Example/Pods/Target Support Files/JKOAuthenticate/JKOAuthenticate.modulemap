@@ -1,0 +1,6 @@
+framework module JKOAuthenticate {
+  umbrella header "JKOAuthenticate-umbrella.h"
+
+  export *
+  module * { export * }
+}

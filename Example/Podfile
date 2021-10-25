@@ -1,0 +1,6 @@
+use_frameworks!
+target 'JKOAuthenticate_Tests' do
+  pod 'JKOAuthenticate', :path => '../'
+  
+  
+end

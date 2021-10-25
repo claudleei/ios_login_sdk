@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'JKOAuthenticate'
-  s.version          = '1.0.0'
+  s.version          = '1.0.1'
   s.summary          = 'A SDK which help developer requesting authentication from JKOS App'
 
 # This description is used to generate tags and improve search results.

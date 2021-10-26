@@ -1,0 +1,11 @@
+framework module JKOAuth {
+  umbrella header "JKOAuth.h"
+
+  export *
+  module * { export * }
+}
+
+module JKOAuth.Swift {
+    header "JKOAuth-Swift.h"
+    requires objc
+}

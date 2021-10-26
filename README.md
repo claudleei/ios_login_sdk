@@ -1,5 +1,10 @@
 # JKOAuthenticate
 
+[![Version](https://img.shields.io/cocoapods/v/JKOAuthenticate.svg?style=flat)](https://cocoapods.org/pods/JKOAuthenticate)
+[![Dependency](https://shields.io/badge/SPM-supported-orange)](https://swift.org/package-manager/)
+[![License](https://img.shields.io/cocoapods/l/JKOAuthenticate.svg?style=flat)](https://cocoapods.org/pods/JKOAuthenticate)
+[![Platform](https://img.shields.io/cocoapods/p/JKOAuthenticate.svg?style=flat)](https://cocoapods.org/pods/JKOAuthenticate)
+
 ## Requirements
 - iOS 11.0+
 
@@ -10,13 +15,12 @@
 To install it, simply add the following line to your Podfile:
 
 ```ruby
-pod '{PodName}'
+pod 'JKOAuthenticate'
 ```
 
 ### [Swift Package Manager](https://swift.org/package-manager/)
 
-- File > Swift Packages > Add Package Dependency
-- Add {Repository URL}
+- File > Swift Packages > Add Package Dependency: https://github.com/claudleei/ios_login_sdk.git
 
 ## Configure Your Project
 
@@ -31,19 +35,21 @@ pod '{PodName}'
   <string>jkos</string>
 </array>
 <key>JKOClientID</key>
-<string>JKOS-ID</string>
+<string>{Your JKOS-ID}</string>
 <key>CFBundleURLTypes</key>
 <array>
   <dict>
     <key>CFBundleURLSchemes</key>
     <array>
-      <string>JKOSURLSchemes</string>
+      <string>jkos{Your JKOS-ID}</string>
     </array>
   </dict>
 </array>
 ```
-3. 在 `JKOClientID` 索引鍵的 <string> 中，將 JKOS-ID 替換為您申請的應用程式編號。
-4. 在 `CFBundleURLSchemes` 索引鍵的 <array><string> 中，將 `JKOSURLSchemes` 替換為 `jkos{JKOS-ID}`。
+3. 在 `JKOClientID` 索引鍵的 <string> 中，將 {Your JKOS-ID} 替換為`您申請的ClientID`。  
+  (Ex: 您申請的ClientID為12345，則填入`12345`)
+4. 在 `CFBundleURLSchemes` 索引鍵的 <array><string> 中，將 jkos{Your JKOS-ID} 替換為 `jkos`加上`您申請的ClientID`。  
+  (Ex: 您申請的ClientID為12345，則填入`jkos12345`)
 
 ## Connect the App Delegate
 
